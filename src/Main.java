@@ -13,9 +13,14 @@ public class Main {
   public static <Passenger> void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     // Цель -- заказ билета
-    System.out.println(" ========== ЗАКАЗ БИЛЕТА В АЭРОПОРТУ \"BERLIN\" ============");
+    System.out.println(" ==========  АЭРОПОРТ \"BERLIN\" ============");
+
     System.out.println();
-    System.out.println();
+    System.out.println("    ДОБРО ПОЖАЛОВАТЬ!  ");
+    System.out.println("    WILLKOMMEN ZURÜCK! ");
+    System.out.println("       BIENVENIDO!     ");
+    System.out.println("       ACCUEILLIR!     ");
+    System.out.println("         WELCOME!        ");
 
     List<String> lines = new ArrayList<>();
     lines.add("LONDON");
@@ -130,6 +135,7 @@ public class Main {
     System.out.println(numbersPQ.poll());
     System.out.println(numbersPQ.poll());
     System.out.println(numbersPQ.poll());
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
     System.out.println("                           КАССА № 3   ");
     System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -180,8 +186,12 @@ public class Main {
             pas.sortPassenger();
             System.out.println();
 
-          }
+          } // чтение из файла
           case 7 -> {
+            pas.writePassenger();
+            System.out.println("res/input.txt");
+          }
+          case 8 -> {
             // Выход
             return;
           }
