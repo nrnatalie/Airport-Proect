@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Airport {
+
   /**
    * Вывод меню на экран
    */
@@ -17,6 +18,7 @@ public class Airport {
     System.out.println("7 - Выход:");
     System.out.println("Введите команду: ");
   }
+
   /**
    * Mетод добавляет контакт пассажира
    *
@@ -32,6 +34,20 @@ public class Airport {
     String phone = scanner.next();
     contacts.put(name, phone);
     return contacts;
+  }
+
+  /**
+   * Метод печатает все контакты пассажиров
+   *
+   * @param contacts Выводит на экран имя и паспорт пассажира, цикл for each перебирает по ключу и
+   *                 печатает пассажиров
+   */
+
+  public static void printPassengerNumber(HashMap<String, String> contacts) {
+
+    for (String name : contacts.keySet()) {
+      System.out.println("Name: " + name + " | Passport: " + contacts.get(name));
+    }
   }
 
 }
