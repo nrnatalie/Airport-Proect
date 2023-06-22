@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Airport {
   /**
    * Вывод меню на экран
@@ -13,6 +16,22 @@ public class Airport {
     System.out.println("6 - Сортировать пассажира:");
     System.out.println("7 - Выход:");
     System.out.println("Введите команду: ");
+  }
+  /**
+   * Mетод добавляет контакт пассажира
+   *
+   * @param contacts список пассажиров - имя и паспорт
+   * @return contacts
+   */
+
+  public static HashMap<String, String> addPassenger(HashMap<String, String> contacts) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Ваше имя? ");
+    String name = scanner.next();
+    System.out.println("Ваш паспорт: ");
+    String phone = scanner.next();
+    contacts.put(name, phone);
+    return contacts;
   }
 
 }
