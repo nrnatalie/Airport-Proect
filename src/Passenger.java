@@ -29,7 +29,6 @@ public class Passenger {
   public String toString() {
     return name + "(ticket: " + ticket + ")";
 
-
   }
 
   public static Passenger parseFrom(String line, char sep) {
