@@ -58,4 +58,42 @@ public class PassengerList {
 
   }
 
+  /**
+   * Сортируем пассажиров Фильтруем и устанавливаем лимит ограничений
+   */
+  public void sortPassenger() {
+    Scanner scanner = new Scanner(System.in);
+    List<Passenger> passeng = makePassenger();
+    System.out.println("Введите минимальный билет:");
+    int price = scanner.nextInt();
+    scanner.nextLine();
+
+    passeng.stream()
+        .filter(s -> s.getTicket() >= price)
+        .sorted((s1, s2) -> -Integer.compare(s1.getTicket(), s2.getTicket()))
+        .limit(5)
+        .forEach(System.out::println);
+
+  }
+
+  public static List<Passenger> makePassenger() {
+    List<Passenger> effect = new ArrayList<>();
+    effect.add(new Passenger("Роша Генадий А.", 99));
+    effect.add(new Passenger("Гоша Леонид А.", 89));
+    effect.add(new Passenger("Броша Василий А.", 75));
+    effect.add(new Passenger("Зоша Андрей А.", 70));
+    effect.add(new Passenger("Лоша Мухамед А.", 59));
+    effect.add(new Passenger("Шоша Сергей А.", 65));
+    effect.add(new Passenger("Фоша Олег А.", 78));
+    effect.add(new Passenger("Тоша Никита А.", 85));
+    effect.add(new Passenger("Тоша Николай А.", 22));
+    effect.add(new Passenger("Тоша Пупкин А.", 18));
+    effect.add(new Passenger("Тоша Владимир А.", 15));
+    effect.add(new Passenger("Тоша Михаил А.", 10));
+    effect.add(new Passenger("Тоша Борис А.", 8));
+    effect.add(new Passenger("Тоша Генадий А.", 3));
+    return effect;
+  }
 }
+
+
