@@ -2,12 +2,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Main {
 
-  public static void main(String[] args) throws IOException {
+  public static <Passenger> void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     // Цель -- заказ билета
     System.out.println(" ========== ЗАКАЗ БИЛЕТА В АЭРОПОРТУ \"BERLIN\" ============");
@@ -127,10 +130,76 @@ public class Main {
     System.out.println(numbersPQ.poll());
     System.out.println(numbersPQ.poll());
     System.out.println(numbersPQ.poll());
-    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
+    System.out.println("                           КАССА № 3   ");
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    Scanner scanner = new Scanner(System.in);
+
+    HashMap<String, String> passanger = new HashMap<>();
+    PassengerList pas = new PassengerList();
+    /**
+     * Печатаем меню  цикл do- while для printMenuAirport()
+     */
+    do {
+      Airport.printMenuAirport();
+      try {
+        int buttonPaassenger = scanner.nextInt();
+        //добавить команду
+        switch (buttonPaassenger) {
+          case 1 -> {
+
+            Airport.addPassenger(passanger);
+          } // перебирает имя пассажира
+          case 2 -> {
+
+            Airport.printPassengerNumber(passanger);
+          }
+          case 3 -> {
+            // печатаем номер билета по имени
+            String ticket = Airport.searchTicket(passanger);
+            if (!passanger.equals(null)) {
+              System.out.println("Ticket: " + ticket);
+            } else {
+              System.out.println("Такого пассажира нет.");
+            }
+          }
+          case 4 -> {
+            // запись в файл
+            pas.writePassenger();
+            System.out.println("res/out.txt");
+          } //удалить выбранное имя пассажира
+          case 5 -> {
+            if (Airport.deletePassenger(passanger)) { // если метод вернул true
+              System.out.println("Сортровать пассажира.");
+            } else {
+              System.out.println("Такого пассажира нет.");
+            }
+
+          } //сортировать пассажиров
+          case 6 -> {
+            pas.sortPassenger();
+            System.out.println();
+
+          }
+          case 7 -> {
+            // Выход
+            return;
+          }
+          default -> {
+            System.out.println("Неверный ввод, попробуйте ещё раз.");
+          }
+        } // конец оператора switch
+      } catch (InputMismatchException e) { // проверка на некорректный ввод
+        System.out.println("Неверный ввод попробуйте ещё раз.");
+        scanner.next();
+      }
+
+    } while (true); // конец цикла while
   }
 }
+
+
+
 
 
 
