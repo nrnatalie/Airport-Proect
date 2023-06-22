@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class Main {
 
@@ -110,6 +111,23 @@ public class Main {
 
     System.out.println("Спасибо за заказ ");
     System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    System.out.println("                          КАССА № 2  ");
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    System.out.println(" Группа из 5 человек, ожидают регистрацию:");
+    System.out.println(" Выводим количество пассажиров в очереди на экран :");
+
+    PriorityQueue<Integer> numbersPQ = new PriorityQueue<>();
+    numbersPQ.add(5);
+    numbersPQ.add(2);
+    numbersPQ.add(4);
+    numbersPQ.add(1);
+    numbersPQ.add(3);
+    System.out.println(numbersPQ.poll());
+    System.out.println(numbersPQ.poll());
+    System.out.println(numbersPQ.poll());
+    System.out.println(numbersPQ.poll());
+    System.out.println(numbersPQ.poll());
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
   }
 }
