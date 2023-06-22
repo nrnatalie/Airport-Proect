@@ -67,4 +67,23 @@ public class Airport {
     return null;
   }
 
+  /**
+   * Метод для удаления пассажира по имени
+   *
+   * @param contacts Перебираем пассажиров,если имя нашлось, то удаляем пассажира
+   * @return возвращаем true
+   */
+
+  public static boolean deletePassenger(HashMap<String, String> contacts) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Input name: ");
+    String name = scanner.next();
+    if (contacts.containsKey(name)) {
+      contacts.remove(name);
+      return true;
+    }
+    return false;
+  }
 }
+
+
