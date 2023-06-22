@@ -75,8 +75,25 @@ public class Main {
       System.out.println("Приходите ещё, " + name + "!");
       return;
     }
-
-
+    System.out.println("Как вы желаете оплатить?");
+    System.out.println();
+    // 4. Способ оплаты - выбор между наличными и картой
+    System.out.println("Выберите способ оплаты:");
+    System.out.println("1 - наличными");
+    System.out.println("2 - картой");
+    String payment = br.readLine();
+    boolean byCard;
+    if (payment.equals("1")) {
+      byCard = false;
+    } else if (payment.equals("2")) {
+      byCard = true;
+    } else {
+      System.out.println("Выбран некорректный способ оплаты");
+      return;
+    }
   }
+
+
 }
+
 
