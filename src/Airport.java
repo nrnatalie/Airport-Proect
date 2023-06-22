@@ -50,4 +50,21 @@ public class Airport {
     }
   }
 
+  /**
+   * Метод для поиска билета по имени
+   *
+   * @param contacts Перебираем список пассажиров по имени и паспорту и если имя нашлось
+   * @return Возвращаем билет
+   */
+  // метод для поиска билета по имени
+  public static String searchTicket(HashMap<String, String> contacts) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Input name: ");
+    String name = scanner.next();
+    if (contacts.containsKey(name)) {
+      return contacts.get(name);
+    }
+    return null;
+  }
+
 }
