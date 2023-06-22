@@ -52,9 +52,16 @@ public class Main {
     } else {
       System.out.println("К сожалению, в ваш город пока самолётов нет.");
       return;
+    }
+    // 2 Узнаём есть ли билет
+    System.out.println("Вам повезло у нас есть для вас билет: ");
+    System.out.println();
+
+    System.out.println("Предоставьте пожалуйста ID паспорта:");
+    String passport = br.readLine();
 
     }
 
 
   }
-}
+
