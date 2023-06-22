@@ -42,7 +42,19 @@ public class Main {
     System.out.println("Как вас зовут?");
     String name = br.readLine();
 
+    // 2 Узнаём город куда отправляется пассажир
+    System.out.println("Куда летим?");
+    String city = br.readLine();
+
+    //     !Условие-стражник!
+    if (city.equalsIgnoreCase("МЮНХЕН") || city.equalsIgnoreCase("München")) {
+      System.out.println("Замечательно!");
+    } else {
+      System.out.println("К сожалению, в ваш город пока самолётов нет.");
+      return;
+
+    }
+
+
   }
-
-
 }
