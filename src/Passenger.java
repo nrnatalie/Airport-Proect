@@ -37,7 +37,6 @@ public class Passenger {
     String ticketStr = line.substring(sepIndex + 1);
     int ticket = Integer.parseInt(ticketStr);
     return new Passenger(n, ticket);
-
   }
 
 }
