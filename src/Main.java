@@ -124,6 +124,10 @@ public class Main {
     System.out.println(" Группа из 5 человек, ожидают регистрацию:");
     System.out.println(" Выводим количество пассажиров в очереди на экран :");
 
+    /**
+     * Queue очередь- первый пришёл, первый ушёл
+     * poll()- возвращает элемент
+     */
     PriorityQueue<Integer> numbersPQ = new PriorityQueue<>();
     numbersPQ.add(5);
     numbersPQ.add(2);
