@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PassengerList {
+
   private final List<Passenger> passengers = new ArrayList<>();
   private File file;
   private char sep;
