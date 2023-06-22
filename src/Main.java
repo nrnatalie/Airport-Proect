@@ -91,9 +91,30 @@ public class Main {
       System.out.println("Выбран некорректный способ оплаты");
       return;
     }
+
+    System.out.println("Спасибо за покупку, " + name + "!");
+    System.out.println("Ваш билет :" + "№13");
+    System.out.println("Ваш паспорт :" + passport);
+
+    if (small) {
+      System.out.println("Размер багажа: Маленький ");
+    } else {
+      System.out.println("Размер багажа: Большой ");
+    }
+    if (byCard) {
+      System.out.println("Заказ будет оплачен картой");
+    } else {
+      System.out.println("Приготовьте, пожалуйста, наличные!");
+      return;
+    }
+
+    System.out.println("Спасибо за заказ ");
+    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
   }
-
-
 }
+
+
+
 
 
