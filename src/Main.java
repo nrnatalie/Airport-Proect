@@ -60,8 +60,23 @@ public class Main {
     System.out.println("Предоставьте пожалуйста ID паспорта:");
     String passport = br.readLine();
 
+// 3 Размер - выбор между маленьким и большим багажом
+    System.out.println("Выберите размер: ");
+    System.out.println("М - маленький багаж");
+    System.out.println("Б - большой багаж");
+    String size = br.readLine().toUpperCase();
+    boolean small; // true - маленький, false - большой
+    if (size.equals("М")) {
+      small = true;
+    } else if (size.equals("Б")) {
+      small = false; // если не маленький, то большой багаж
+    } else {
+      System.out.println("Мы пока не перевозим багаж такого размера.");
+      System.out.println("Приходите ещё, " + name + "!");
+      return;
     }
 
 
   }
+}
 
